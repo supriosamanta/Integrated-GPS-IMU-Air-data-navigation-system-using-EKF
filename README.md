@@ -1,11 +1,5 @@
 # 📡 Integrated Aircraft Navigation and Fault Detection System
 
-**Course:** ACS6124 – Multisensor and Decision Systems  
-**University:** The University of Sheffield  
-**Lecturer:** Dr. Yuanbo Nie  
-**Author:** Samanta Suprio Sujoy    
-**Year:** 2022–2023
-
 ---
 
 ## 📘 Project Overview
@@ -35,17 +29,15 @@ Derive Jacobian matrices for:
 - H = ∂h/∂x (measurement).
 
 #### 🔸 Task 1.2
-Run IEKF on dataset `dataTask1.mat`:
 - Plot state estimates for all 12 states.
 - Comment on innovation stability and convergence.
 
 ---
 
 ### 🔹 Task 2: Sensor Bias Correction
-Using `dataTask2.mat`, investigate the effect of **constant IMU sensor bias**.
+Investigate the effect of **constant IMU sensor bias**.
 
 #### 🔸 Task 2.1
-- Re-run Task 1 without modifying the model.
 - Compare estimated trajectories with those from Task 1.
 - Identify variables most affected by bias.
 
@@ -59,9 +51,8 @@ Using `dataTask2.mat`, investigate the effect of **constant IMU sensor bias**.
 ### 🔹 Task 3: Fault Detection and Mitigation
 
 #### 🔸 Task 3.1
-Use `dataTask3_1.mat` with unmodeled sensor faults:
-- Plot innovation history.
 - Identify time of fault occurrences using abnormal innovation behavior.
+- Plot innovation history.
 
 #### 🔸 Task 3.2
 - Model biases as random walk processes with added process noise.
@@ -70,14 +61,11 @@ Use `dataTask3_1.mat` with unmodeled sensor faults:
 
 #### 🔸 Task 3.3
 - Use CUSUM algorithm to detect faults in inputs: Ax, Ay, Az, p, q, r.
-- Use `dataTask2.mat` as nominal reference, and `dataTask3_1.mat` for detection.
-- Justify method, display detection results, and plot alarms.
 
 #### 🔸 Task 3.4
-- Detect **frozen angle of attack (α)** sensor in `dataTask3_2.mat`.
+- Detect **frozen angle of attack (α)** sensor.
 - Assume fault source is known.
 - Without increasing state vector, adapt innovation-based FDD.
-- Plot detection and mitigation evidence.
 
 ---
 
@@ -86,25 +74,12 @@ Submit Kalman filter implementation with:
 - Robust estimation
 - Effective fault detection
 
-Your submission will be assessed on:
-- **Estimation WMSE** (Weighted Mean Squared Error)
-- **Fault Detection Timing Accuracy**
-- **Bias/Fault Signal Estimation Accuracy**
-
-Refer to `SubmissionTemplate.m` and `testYourScript.m` for script requirements.
-
 ---
 
 ## 📂 Repository Structure
 
 ```
-Multisensor-Systems-Project/
-│
-├── data/
-│   ├── dataTask1.mat
-│   ├── dataTask2.mat
-│   ├── dataTask3_1.mat
-│   └── dataTask3_2.mat
+Integrated-GPS-IMU-Air-data-navigation-system-using-EKF/
 │
 ├── figures/
 │   ├── figure_task1_attitude_estimation.png
@@ -113,14 +88,6 @@ Multisensor-Systems-Project/
 │
 ├── docs/
 │   └── ACS6124_Assignment.pdf
-│
-├── code/
-│   ├── IEKF_main.m
-│   ├── Jacobian_derivation.m
-│   ├── run_task1.m
-│   ├── run_task2_bias_model.m
-│   ├── run_task3_cusum.m
-│   └── SubmissionTemplate.m
 │
 └── README.md
 ```
@@ -197,16 +164,6 @@ The system model uses simplified flat-Earth equations to relate these quantities
 
 ---
 
-## 💼 How to Use This Project in Your Portfolio
-
-On LinkedIn or your resume, list this project as:
-
-> **Aircraft Navigation and Fault Detection System** – Designed a multisensor estimator using Iterated Kalman Filtering, estimated IMU biases in-flight, and implemented CUSUM-based fault detection for aircraft sensor anomalies.
-
-Include the GitHub link and optionally attach PDF report with visual results.
-
----
-
 ⭐️ *If this project interests you or helps your learning, consider starring the repository!* ⭐️
 
 ---
@@ -215,22 +172,68 @@ Include the GitHub link and optionally attach PDF report with visual results.
 ## 🖼️ Figures
 
 ### 📊 Task 1: Navigation State Estimation
-![Attitude Estimation](figures/figure_task1_attitude_estimation.png)
+![Body-frame velocities](figures/uvw_KF.png)
+
+![Orientation](figures/psi_KF.png)
+
+![Rotational rates](figures/v_wxe_KF.png)
+
+![Acceleration](figures/xyz_KF.png)
+
 *Estimated roll, pitch, and yaw using IEKF.*
 
 ### 📊 Task 2: Sensor Bias Analysis
-![Bias Comparison](figures/figure_task2_bias_comparison.png)
+![Body-frame velocities Bias](figures/uvw_sensor_bias.png)
+
+![Orientation Bias](figures/theta_sensor_bias.png)
+
+![Wind Component in z Direction Bias](figures/VwzE_sensor_bias.png)
 *Comparison of trajectories from biased vs. unbiased IMU input.*
 
-![Bias Estimation](figures/figure_task2_bias_estimation.png)
+![Rotational rates Bias Estimation](figures/b_pqr_rectified.png)
+
+![Acceleration Bias Estimation](figures/b_xyz_rectified.png)
+
 *Convergence of estimated IMU bias terms.*
 
 ### 📊 Task 3: Fault Detection and Mitigation
-![CUSUM Detection for Ax](figures/figure_task3_cusum_ax.png)
+
+![Fault Detection for Body-frame velocities](figures/UVW_fault.png)
+
+![Fault Detection for Orientation](figures/phi_theta_psi_fault.png)
+
+![Fault Detection for Rotational rates](figures/Vwxe_fault.png)
+
+![Fault Detection for Acceleration](figures/xyz_fault.png)
+
+![Fault Correction for Body-frame velocities](figures/uvw_fault_correction.png)
+
+![Fault Correction for Orientation](figures/phi_fault_correction.png)
+
+![Fault Correction for Rotational rates](figures/vw_fault_correction.png)
+
+![Fault Correction for Acceleration](figures/xyz_fault_correction.png)
+
+![CUSUM Detection for Ax](figures/a_x.png)
 *CUSUM test result showing fault detection in Ax.*
 
-![Innovation History](figures/figure_task3_innovation_history.png)
-*Innovation signal over time highlighting fault responses.*
+![CUSUM Detection for Ay](figures/a_y.png)
+*CUSUM test result showing fault detection in Ay.*
 
-![Angle of Attack Fault](figures/figure_task3_aoa_fault.png)
+![CUSUM Detection for Az](figures/a_z.png)
+*CUSUM test result showing fault detection in Az.*
+
+![CUSUM Detection for P](figures/bp.png)
+*CUSUM test result showing fault detection in P.*
+
+![CUSUM Detection for Q](figures/bq.png)
+*CUSUM test result showing fault detection in Q.*
+
+![CUSUM Detection for R](figures/br.png)
+*CUSUM test result showing fault detection in R.*
+
+![Innovation History](figures/innov_history.png)
+*Innovation signal over time, highlighting fault responses.*
+
+![Angle of Attack Fault](figures/aoa.png)
 *Detection and mitigation of AoA sensor freeze (Task 3.4).*
