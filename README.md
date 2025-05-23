@@ -172,68 +172,68 @@ The system model uses simplified flat-Earth equations to relate these quantities
 ## 🖼️ Figures
 
 ### 📊 Task 1: Navigation State Estimation
-![Body-frame velocities](figures/uvw_KF.png)
+![Body-frame velocities](figures/uvw_KF.jpg)
 
-![Orientation](figures/psi_KF.png)
+![Orientation](figures/psi_KF.jpg)
 
-![Rotational rates](figures/v_wxe_KF.png)
+![Rotational rates](figures/v_wxe_KF.jpg)
 
-![Acceleration](figures/xyz_KF.png)
+![Acceleration](figures/xyz_KF.jpg)
 
 *Estimated roll, pitch, and yaw using IEKF.*
 
 ### 📊 Task 2: Sensor Bias Analysis
-![Body-frame velocities Bias](figures/uvw_sensor_bias.png)
+![Body-frame velocities Bias](figures/uvw_sensor_bias.jpg)
 
-![Orientation Bias](figures/theta_sensor_bias.png)
+![Orientation Bias](figures/theta_sensor_bias.jpg)
 
-![Wind Component in z Direction Bias](figures/VwzE_sensor_bias.png)
+![Wind Component in z Direction Bias](figures/VwzE_sensor_bias.jpg)
 *Comparison of trajectories from biased vs. unbiased IMU input.*
 
-![Rotational rates Bias Estimation](figures/b_pqr_rectified.png)
+![Rotational rates Bias Estimation](figures/b_pqr_rectified.jpg)
 
-![Acceleration Bias Estimation](figures/b_xyz_rectified.png)
+![Acceleration Bias Estimation](figures/b_xyz_rectified.jpg)
 
 *Convergence of estimated IMU bias terms.*
 
 ### 📊 Task 3: Fault Detection and Mitigation
 
-![Fault Detection for Body-frame velocities](figures/UVW_fault.png)
+![Fault Detection for Body-frame velocities](figures/UVW_fault.jpg)
 
-![Fault Detection for Orientation](figures/phi_theta_psi_fault.png)
+![Fault Detection for Orientation](figures/phi_theta_psi_fault.jpg)
 
-![Fault Detection for Rotational rates](figures/Vwxe_fault.png)
+![Fault Detection for Rotational rates](figures/Vwxe_fault.jpg)
 
-![Fault Detection for Acceleration](figures/xyz_fault.png)
+![Fault Detection for Acceleration](figures/xyz_fault.jpg)
 
-![Fault Correction for Body-frame velocities](figures/uvw_fault_correction.png)
+![Fault Correction for Body-frame velocities](figures/uvw_fault_correction.jpg)
 
-![Fault Correction for Orientation](figures/phi_fault_correction.png)
+![Fault Correction for Orientation](figures/phi_fault_correction.jpg)
 
-![Fault Correction for Rotational rates](figures/vw_fault_correction.png)
+![Fault Correction for Rotational rates](figures/vw_fault_correction.jpg)
 
-![Fault Correction for Acceleration](figures/xyz_fault_correction.png)
+![Fault Correction for Acceleration](figures/xyz_fault_correction.jpg)
 
-![CUSUM Detection for Ax](figures/a_x.png)
+![CUSUM Detection for Ax](figures/a_x.jpg)
 *CUSUM test result showing fault detection in Ax.*
 
-![CUSUM Detection for Ay](figures/a_y.png)
+![CUSUM Detection for Ay](figures/a_y.jpg)
 *CUSUM test result showing fault detection in Ay.*
 
-![CUSUM Detection for Az](figures/a_z.png)
+![CUSUM Detection for Az](figures/a_z.jpg)
 *CUSUM test result showing fault detection in Az.*
 
-![CUSUM Detection for P](figures/bp.png)
+![CUSUM Detection for P](figures/bp.jpg)
 *CUSUM test result showing fault detection in P.*
 
-![CUSUM Detection for Q](figures/bq.png)
+![CUSUM Detection for Q](figures/bq.jpg)
 *CUSUM test result showing fault detection in Q.*
 
-![CUSUM Detection for R](figures/br.png)
+![CUSUM Detection for R](figures/br.jpg)
 *CUSUM test result showing fault detection in R.*
 
-![Innovation History](figures/innov_history.png)
+![Innovation History](figures/innov_history.jpg)
 *Innovation signal over time, highlighting fault responses.*
 
-![Angle of Attack Fault](figures/aoa.png)
+![Angle of Attack Fault](figures/aoa.jpg)
 *Detection and mitigation of AoA sensor freeze (Task 3.4).*
