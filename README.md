@@ -3,8 +3,7 @@
 **Course:** ACS6124 – Multisensor and Decision Systems  
 **University:** The University of Sheffield  
 **Lecturer:** Dr. Yuanbo Nie  
-**Author:** Samanta Suprio Sujoy  
-**Assessment:** Part I – Multisensor Systems (50% of module marks)  
+**Author:** Samanta Suprio Sujoy    
 **Year:** 2022–2023
 
 ---
